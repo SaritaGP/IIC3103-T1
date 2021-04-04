@@ -2,8 +2,7 @@
 
 <h3>Temporada <%= @season %></h3>
 
-
 <% @episodes.each do |episode| %>
-<p><%=  episode["title"] %></p>
+<div><%= link_to episode["title"], episode_bb_path(episode["episode_id"]) %></div>
 <%end%>
 

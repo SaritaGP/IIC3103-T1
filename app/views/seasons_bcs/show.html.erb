@@ -4,5 +4,5 @@
 
 
 <% @episodes.each do |episode| %>
-<p><%=  episode["title"] %></p>
+<p><%=  link_to episode["title"], episode_bcs_path(episode["episode_id"]) %></p>
 <%end%>

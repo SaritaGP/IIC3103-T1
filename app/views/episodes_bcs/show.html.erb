@@ -1,0 +1,12 @@
+<h1><%= @episode["series"]%></h1>
+
+<div>
+<h3><%= @episode["title"] %></h3>
+<h4> Temporada: <%= @episode["season"]%></h4>
+<h4> Episodio: <%= @episode["episode"]%></h4>
+<h4> Fecha estreno: <%= @episode["air_date"]%></h4>
+<h4> Personajes: </h4>
+<% @episode["characters"].each do |character| %>
+<div><%= link_to character, character_path(character.gsub(".", "")) %></div>
+<%end%>
+</div>
