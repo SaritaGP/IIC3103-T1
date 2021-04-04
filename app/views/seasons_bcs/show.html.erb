@@ -1,0 +1,8 @@
+<h1>Better Call Saul</h1>
+
+<h3>Temporada <%= @season %></h3>
+
+
+<% @episodes.each do |episode| %>
+<p><%=  episode["title"] %></p>
+<%end%>

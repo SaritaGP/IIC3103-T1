@@ -1,0 +1,11 @@
+<h1>Tarea 1</h1>
+
+<h3>Breaking Bad</h3>
+<% @seasons_bb.each do |season_bb| %>
+<div><%= link_to "Temporada #{season_bb}", season_bb_path(season_bb) %></div>
+<%end%>
+
+<h3>Better Call Saul</h3>
+<% @seasons_bcs.each do |season_bcs| %>
+<div><%= link_to "Temporada #{season_bcs}", season_bcs_path(season_bcs)%></div>
+<%end%>
