@@ -9,11 +9,19 @@
 <% @character_api["occupation"].each do |occupation| %>
 <p><%= occupation %></p>
 <%end%>
+
 <h4> Temporadas de Breaking Bad: </h4>
+<% if @character_api["appearance"].empty? %>
+<p>No aparece en esta serie</p>  
+<% end %>
 <% @character_api["appearance"].each do |appearance| %>
 <span><%= link_to appearance, season_bb_path(appearance) %></span>
 <%end%>
+
 <h4> Temporadas de Call Saul: </h4>
+<% if @character_api["better_call_saul_appearance"].empty? %>
+<p>No aparece en esta serie</p>
+<% end %>
 <% @character_api["better_call_saul_appearance"].each do |better_call_saul_appearance| %>
 <span><%= link_to better_call_saul_appearance, season_bcs_path(better_call_saul_appearance) %></span>
 <%end%>
@@ -21,8 +29,13 @@
 
 <div>
 <h3>Citas</h3>
+<% if @quotes_api.empty? %>
+  <p>No hay citas</p>
+<% end %>
+
 <% @quotes_api.each do |quote| %>
 <p><%= quote["quote"] %></p>
 <%end%>
+
 </div>
 
