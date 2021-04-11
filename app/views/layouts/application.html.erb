@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <div class="search">
+      <%= form_tag(characters_path, method: :get) do %>
+          <%= text_field_tag(:search, params[:search]) %>
+          <%= submit_tag("Search") %>
+      <%end%>
+    </div>
+
     <%= yield %>
   </body>
 </html>

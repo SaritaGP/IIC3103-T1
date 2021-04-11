@@ -1,0 +1,5 @@
+<h3>Resultado Búsqueda</h3>
+
+<% @result_search.each do |result| %>
+<div><%= link_to result["name"], character_path(result["name"].gsub(".", ""))%></div>
+<%end%>

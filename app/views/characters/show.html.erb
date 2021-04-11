@@ -2,25 +2,25 @@
 
 <div>
 <%= image_tag(@character_api["img"], :height => '15%', :width => '15%') %>
-<h4> Nickname: <%= @character_api["nickname"]%></h4>
-<h4> Actor/Actress: <%= @character_api["portrayed"]%></h4>
+<span><h4> Sobrenombre: <%= @character_api["nickname"]%></h4></span>
+<h4> Actor/Actriz: <%= @character_api["portrayed"]%></h4>
 <h4> Status: <%= @character_api["status"]%></h4>
-<h4> Occupation: </h4>
+<h4> Ocupación: </h4>
 <% @character_api["occupation"].each do |occupation| %>
 <p><%= occupation %></p>
 <%end%>
-<h4> Seasons Breaking Bad: </h4>
+<h4> Temporadas de Breaking Bad: </h4>
 <% @character_api["appearance"].each do |appearance| %>
 <span><%= link_to appearance, season_bb_path(appearance) %></span>
 <%end%>
-<h4> Seasons Better Call Saul: </h4>
+<h4> Temporadas de Call Saul: </h4>
 <% @character_api["better_call_saul_appearance"].each do |better_call_saul_appearance| %>
 <span><%= link_to better_call_saul_appearance, season_bcs_path(better_call_saul_appearance) %></span>
 <%end%>
 </div>
 
 <div>
-<h3>Quotes</h3>
+<h3>Citas</h3>
 <% @quotes_api.each do |quote| %>
 <p><%= quote["quote"] %></p>
 <%end%>
