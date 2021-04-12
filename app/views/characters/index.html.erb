@@ -2,8 +2,10 @@
 
 <% if @result_search.empty? %>
   <p>No hay resultados para esta búsqueda</p>
-<% end %>
 
-<% @result_search.each do |result| %>
-<div><%= link_to result["name"], character_path(result["name"].gsub(".", ""))%></div>
+<% else %>
+  <% @result_search.each do |result| %>
+  <div><%= link_to result["name"], character_path(result["name"].gsub(".", ""))%></div>
+  <%end%>
+
 <%end%>

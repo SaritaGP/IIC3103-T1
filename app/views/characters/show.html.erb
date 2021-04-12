@@ -27,15 +27,15 @@
 <%end%>
 </div>
 
-<div>
+
 <h3>Citas</h3>
 <% if @quotes_api.empty? %>
   <p>No hay citas</p>
 <% end %>
 
+<ul>
 <% @quotes_api.each do |quote| %>
-<p><%= quote["quote"] %></p>
+<li><%= quote["quote"] %></li>
 <%end%>
-
-</div>
+</ul>
 

@@ -2,7 +2,10 @@
 
 <h3>Temporada <%= @season %></h3>
 
+<% if @episodes&.empty? %>
+  <p>No hay episodios en esta temporada</p>
+<% end %>
 
-<% @episodes.each do |episode| %>
+<% @episodes&.each do |episode| %>
 <p><%=  link_to episode["title"], episode_bcs_path(episode["episode_id"]) %></p>
 <%end%>
