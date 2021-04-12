@@ -6,7 +6,9 @@
   <p>No hay episodios en esta temporada</p>
 <% end %>
 
+<ul class="list-group">
 <% @episodes&.each do |episode| %>
-<div><%= link_to episode["title"], episode_bb_path(episode["episode_id"]) %></div>
+<li class="list-group-item"><%= link_to episode["title"], episode_bb_path(episode["episode_id"]) %></li>
 <%end%>
+</ul>
 
