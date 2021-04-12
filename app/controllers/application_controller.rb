@@ -2,6 +2,7 @@ class ApiError < StandardError; end
 
 class ApplicationController < ActionController::Base
   rescue_from(ApiError, with: :error_master)
+  rescue_from(URI::InvalidURIError, with: :error_master)
 
   def error_master
     redirect_to(errors_path)
